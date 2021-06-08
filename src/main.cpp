@@ -4,6 +4,11 @@
 #define MOTOR_A 27
 #define MOTOR_B 26
 #define MOTOR_V 25
+#define BUTTON_A 15
+#define BUTTON_B 2
+#define BUTTON_C 0
+#define BUTTON_D 4
+#define PIN_DATA 19
 
 double calculateTime(double length, double rpm, double radius) {
     return (60 * length) / (2 * PI * rpm * radius);
