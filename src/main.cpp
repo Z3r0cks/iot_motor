@@ -10,10 +10,6 @@
 #define BUTTON_D 4
 #define PIN_DATA 19
 
-double calculateTime(double length, double rpm, double radius) {
-    return (60 * length) / (2 * PI * rpm * radius);
-}
-
 Motor* motor;
 
 void setup() {

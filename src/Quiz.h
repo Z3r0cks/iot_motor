@@ -1,11 +1,7 @@
 #include <Arduino.h>
 #include <Motor.h>
 
-struct Question {
-    uint8_t correctAnswer;
-};
-
-enum Phase { DeepSleep, QuestionChoice, AnswerQuestion, ResolveAnswer };
+enum Phase { DeepSleep, QuestionChoice, AnswerQuestion };
 
 class Quiz {
    private:
@@ -16,25 +12,36 @@ class Quiz {
     uint8_t pinD;
     uint8_t pinDataIn;
     uint8_t pinDataOut;
+    uint8_t* scorePins;
+    uint8_t pinCorrect;
+    uint8_t pinWrong;
     bool isAtStart;
     bool isGameMaster;
     Phase phase;
-    int8_t score;
-    int8_t oppositeScore;
+    uint8_t score;
+    uint8_t opositeScore;
     uint8_t* questions;
-    int8_t currentQuestion;
+    uint8_t currentQuestion;
     void deepSleep();
     void chooseQuestion();
+    double calculateTime(double length);
+    void answerQuestion();
+    void rotateBack();
 
-   public:
     Quiz(Motor* motor,
          uint8_t pinA,
          uint8_t pinB,
          uint8_t pinC,
          uint8_t pinD,
+         uint8_t pinScoreA,
+         uint8_t pinScoreB,
+         uint8_t pinScoreC,
+         uint8_t pinCorrect,
+         uint8_t pinWrong,
          uint8_t pinDataIn,
          uint8_t pinDataOut,
          bool isGameMaster);
     void wakeUp();
+    void goSleep();
     void run();
 };
