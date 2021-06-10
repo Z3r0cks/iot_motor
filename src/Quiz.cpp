@@ -4,7 +4,7 @@
 #define Threshold 150
 
 // TODO: set correct time to rotate
-#define QuestionHeight 0.15
+#define QuestionHeight 0.10
 #define RPM 5000
 #define Radius 0.02
 

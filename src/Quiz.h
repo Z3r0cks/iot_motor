@@ -45,3 +45,20 @@ class Quiz {
     void goSleep();
     void run();
 };
+
+/* Motor A: 27
+Motor B: 26
+Motor V: 25
+Button A: 15
+Button B: 2
+Button C: 0
+Button D:4
+LED Korrekt: 16
+LED Falsch: 17
+LED Score A: 32
+LED Score B: 33
+LED Score C: 34
+PIN DATA IN:  18
+PIN DATA OUT: 19
+Batterie +: 5V
+Batterie -: GND */
